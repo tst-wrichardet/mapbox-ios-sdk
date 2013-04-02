@@ -46,6 +46,12 @@
 		23A0AAEB0EB90AA6003A4521 /* RMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A0AAEA0EB90AA6003A4521 /* RMFoundation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		25757F4F1291C8640083D504 /* RMCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 25757F4D1291C8640083D504 /* RMCircle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		25757F501291C8640083D504 /* RMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 25757F4E1291C8640083D504 /* RMCircle.m */; };
+		5F59FC6716E78E7F00ACF0BE /* RMWMS.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F59FC6516E78E7F00ACF0BE /* RMWMS.h */; };
+		5F59FC6816E78E7F00ACF0BE /* RMWMS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FC6616E78E7F00ACF0BE /* RMWMS.m */; };
+		5F59FC6C16E78E9100ACF0BE /* RMWMSSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F59FC6A16E78E9100ACF0BE /* RMWMSSource.h */; };
+		5F59FC6D16E78E9100ACF0BE /* RMWMSSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FC6B16E78E9100ACF0BE /* RMWMSSource.m */; };
+		5F99833116F01E9700E45D80 /* RMGoogleEarthServerMapSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F99832F16F01E9700E45D80 /* RMGoogleEarthServerMapSource.h */; };
+		5F99833216F01E9700E45D80 /* RMGoogleEarthServerMapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F99833016F01E9700E45D80 /* RMGoogleEarthServerMapSource.m */; };
 		96492C400FA8AD3400EBA6D2 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 96492C3F0FA8AD3400EBA6D2 /* RMGlobalConstants.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B1EB26C610B5D8E6009F8658 /* RMNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = B1EB26C510B5D8E6009F8658 /* RMNotifications.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B8474BA40EB40094006A0BC1 /* RMDatabaseCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B8474B980EB40094006A0BC1 /* RMDatabaseCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -208,6 +214,12 @@
 		25757F4E1291C8640083D504 /* RMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMCircle.m; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* MapView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		5F59FC6516E78E7F00ACF0BE /* RMWMS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWMS.h; sourceTree = "<group>"; };
+		5F59FC6616E78E7F00ACF0BE /* RMWMS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMWMS.m; sourceTree = "<group>"; };
+		5F59FC6A16E78E9100ACF0BE /* RMWMSSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWMSSource.h; sourceTree = "<group>"; };
+		5F59FC6B16E78E9100ACF0BE /* RMWMSSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMWMSSource.m; sourceTree = "<group>"; };
+		5F99832F16F01E9700E45D80 /* RMGoogleEarthServerMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGoogleEarthServerMapSource.h; sourceTree = "<group>"; };
+		5F99833016F01E9700E45D80 /* RMGoogleEarthServerMapSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMGoogleEarthServerMapSource.m; sourceTree = "<group>"; };
 		96492C3F0FA8AD3400EBA6D2 /* RMGlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
 		B1EB26C510B5D8E6009F8658 /* RMNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNotifications.h; sourceTree = "<group>"; };
 		B83E64B60E80E73F001663B6 /* RMPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPixel.h; sourceTree = "<group>"; };
@@ -455,6 +467,12 @@
 		B83E64EB0E80E73F001663B6 /* Tile Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5F99832F16F01E9700E45D80 /* RMGoogleEarthServerMapSource.h */,
+				5F99833016F01E9700E45D80 /* RMGoogleEarthServerMapSource.m */,
+				5F59FC6A16E78E9100ACF0BE /* RMWMSSource.h */,
+				5F59FC6B16E78E9100ACF0BE /* RMWMSSource.m */,
+				5F59FC6516E78E7F00ACF0BE /* RMWMS.h */,
+				5F59FC6616E78E7F00ACF0BE /* RMWMS.m */,
 				16EC85CB133CA69A00219947 /* Map Sources */,
 				DDC4BED1152E3BC200089409 /* Interactivity */,
 				B83E64EC0E80E73F001663B6 /* RMTileSource.h */,
@@ -722,6 +740,9 @@
 				DD2B375114CF814F008DE8CB /* FMDatabaseQueue.h in Headers */,
 				DD5A200B15CAD09400FE4157 /* GRMustache.h in Headers */,
 				DD1E3C6E161F954F004FC649 /* SMCalloutView.h in Headers */,
+				5F59FC6716E78E7F00ACF0BE /* RMWMS.h in Headers */,
+				5F59FC6C16E78E9100ACF0BE /* RMWMSSource.h in Headers */,
+				5F99833116F01E9700E45D80 /* RMGoogleEarthServerMapSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +756,7 @@
 				B8C974160E8A19B2007D16AD /* Headers */,
 				B8C974340E8A19B2007D16AD /* Sources */,
 				B8C9744F0E8A19B2007D16AD /* Frameworks */,
+				5F59FC5816E787C500ACF0BE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -819,6 +841,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F59FC5816E787C500ACF0BE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "lipo \"${SYMROOT}/Debug-iphoneos/lib${PRODUCT_NAME}.a\" \"${SYMROOT}/Debug-iphonesimulator/lib${PRODUCT_NAME}.a\" -output \"/Users/wrichardet/Programming/tstgit/ubiquityiphone/external_libs/lib${PRODUCT_NAME}.a\" -create";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B8C974340E8A19B2007D16AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -879,6 +917,9 @@
 				DDE357F516522661001DB842 /* RMPolylineAnnotation.m in Sources */,
 				DDE357F916522CD8001DB842 /* RMPolygonAnnotation.m in Sources */,
 				DD1985C2165C5F6400DF667F /* RMTileMillSource.m in Sources */,
+				5F59FC6816E78E7F00ACF0BE /* RMWMS.m in Sources */,
+				5F59FC6D16E78E9100ACF0BE /* RMWMSSource.m in Sources */,
+				5F99833216F01E9700E45D80 /* RMGoogleEarthServerMapSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,6 +945,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					i386,
+					armv7,
+					armv6,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -917,9 +963,11 @@
 					"\"$(SRCROOT)/Map/GRMustache/lib\"",
 					"\"$(SRCROOT)/../Proj4\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MapBox;
 				RUN_CLANG_STATIC_ANALYZER = NO;
+				VALID_ARCHS = "armv7 armv7s i386 armv6";
 			};
 			name = Debug;
 		};
@@ -927,6 +975,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					i386,
+					armv7,
+					armv6,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -939,8 +992,10 @@
 					"\"$(SRCROOT)/Map/GRMustache/lib\"",
 					"\"$(SRCROOT)/../Proj4\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MapBox;
+				VALID_ARCHS = "armv7 armv7s i386 armv6";
 				ZERO_LINK = NO;
 			};
 			name = Release;

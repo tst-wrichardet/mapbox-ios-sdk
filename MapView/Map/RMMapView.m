@@ -292,7 +292,7 @@
 
     [self setDecelerationMode:RMMapDecelerationFast];
 
-    self.showLogoBug = YES;
+    self.showLogoBug = NO;
 
     self.displayHeadingCalibration = YES;
 
@@ -3512,27 +3512,27 @@
 
 - (void)setViewControllerPresentingAttribution:(UIViewController *)viewController
 {
-    _viewControllerPresentingAttribution = viewController;
-    
-    if (_viewControllerPresentingAttribution && ! _attributionButton)
-    {
-        _attributionButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-        
-        _attributionButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
-        
-        [_attributionButton addTarget:self action:@selector(showAttribution:) forControlEvents:UIControlEventTouchUpInside];
-        
-        _attributionButton.frame = CGRectMake(self.bounds.size.width  - 30,
-                                              self.bounds.size.height - 30,
-                                              _attributionButton.bounds.size.width,
-                                              _attributionButton.bounds.size.height);
-
-        [self addSubview:_attributionButton];
-    }
-    else if ( ! _viewControllerPresentingAttribution && _attributionButton)
-    {
-        [_attributionButton removeFromSuperview];
-    }
+//    _viewControllerPresentingAttribution = viewController;
+//    
+//    if (_viewControllerPresentingAttribution && ! _attributionButton)
+//    {
+//        _attributionButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+//        
+//        _attributionButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+//        
+//        [_attributionButton addTarget:self action:@selector(showAttribution:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        _attributionButton.frame = CGRectMake(self.bounds.size.width  - 30,
+//                                              self.bounds.size.height - 30,
+//                                              _attributionButton.bounds.size.width,
+//                                              _attributionButton.bounds.size.height);
+//
+//        [self addSubview:_attributionButton];
+//    }
+//    else if ( ! _viewControllerPresentingAttribution && _attributionButton)
+//    {
+//        [_attributionButton removeFromSuperview];
+//    }
 }
 
 - (void)showAttribution:(id)sender

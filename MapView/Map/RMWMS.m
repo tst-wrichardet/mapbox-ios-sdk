@@ -39,6 +39,7 @@
 @synthesize service;
 @synthesize version;
 @synthesize exceptions;
+@synthesize projection;
 
 - (id) init
 {
@@ -54,6 +55,7 @@
         [self setService:@"WMS"];
         [self setVersion:@"1.1.1"];
         [self setExceptions:@"application/vnd.ogc.se_inimage"];
+        
     }
     return self;
 }
@@ -70,8 +72,7 @@
         }
     }
     
-    [urlPrefix release];
-    urlPrefix = [newUrlPrefix retain];
+    urlPrefix = newUrlPrefix;
 }
 
 -(NSString *)urlPrefix
@@ -84,14 +85,12 @@
     NSString *str = [NSString
             stringWithFormat:@"%@FORMAT=%@&SERVICE=%@&VERSION=%@&SRS=%@&BBOX=%@&WIDTH=%.0f&HEIGHT=%.0f&LAYERS=%@&STYLES=%@", 
             urlPrefix, format, service, version, crs, bbox, size.width, size.height, layers, styles];
-    NSLog(@"%@",str);
     return str;
 }
 
 -(NSString *)createGetMapForBbox:(NSString *)bbox size:(CGSize)size
 {
     NSString *str = [NSString stringWithFormat:@"%@&REQUEST=GetMap", [self createBaseGet:bbox size:size]];
-    NSLog(@"%@",str);
     return str;
 }
 
@@ -199,9 +198,7 @@
     [self setFormat:nil];
     [self setService:nil];
     [self setVersion:nil];
-    [self setExceptions:nil];
-    
-    [super dealloc];
+    [self setExceptions:nil];    
 }
 
 @end

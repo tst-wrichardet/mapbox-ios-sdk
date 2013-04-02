@@ -27,6 +27,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    RMProjectionWebMercator,
+    RMProjectionWGS84
+} RMWMSProjection;
+
 
 @interface RMWMS : NSObject {
 
@@ -41,20 +46,21 @@
     NSString *service;
     NSString *version;
     NSString *exceptions;
-    
+    RMWMSProjection projection;
 }
 
 @property (retain) NSString *urlPrefix;
 @property (retain) NSString *layers;
 @property (retain) NSString *styles;
 @property (retain) NSString *queryLayers;
-@property (retain) NSString *crs;
+@property (nonatomic,retain) NSString *crs;
 @property BOOL queryable;
 @property (retain) NSString *infoFormat;
 @property (retain) NSString *format;
 @property (retain) NSString *service;
 @property (retain) NSString *version;
 @property (retain) NSString *exceptions;
+@property RMWMSProjection projection;
 
 -(NSString *)createGetMapForBbox:(NSString *)bbox size:(CGSize)size;
 -(NSString *)createGetFeatureInfoForBbox:(NSString *)bbox size:(CGSize)size point:(CGPoint)point;
@@ -66,5 +72,4 @@
 -(void)deselect:(NSString *)layerName;
 -(void)setSelectedLayerNames:(NSArray *)layerNames;
 -(NSArray *)selectedLayerNames;
-
 @end

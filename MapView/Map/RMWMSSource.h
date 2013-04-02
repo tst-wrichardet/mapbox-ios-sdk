@@ -27,7 +27,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RMAbstractMercatorWebSource.h"
+#import "RMAbstractWebMapSource.h"
 #import "RMTile.h"
 #import "RMWMS.h"
 
@@ -44,7 +44,7 @@
  [wmsSource release];
  [wms release];
  */
-@interface RMWMSSource : RMAbstractMercatorWebSource <RMAbstractMercatorWebSource> {
+@interface RMWMSSource : RMAbstractWebMapSource {
 
     float initialResolution;
     float originShift;

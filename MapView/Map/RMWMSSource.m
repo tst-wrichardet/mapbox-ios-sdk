@@ -66,13 +66,46 @@
             min.x, min.y, max.x, max.y];
 }
 
+-(NSString*) ddBboxForTile:(RMTile)tile
+{
+    NSString *str = [self tileLatLonBounds:tile];
+    return str;
+}
+
 -(NSString*) tileURL: (RMTile) tile
 {
-    NSString *bbox = [self bboxForTile:tile];
+    NSString *bbox;
+    if ([wms.crs isEqualToString:@"EPSG:4326"]) {
+        bbox = [self ddBboxForTile:tile];
+    } else if([wms.crs isEqualToString:@"EPSG:900913"]) {
+        bbox = [self bboxForTile:tile];
+    }
     return [wms createGetMapForBbox:bbox size:CGSizeMake(kDefaultTileSize, kDefaultTileSize)];
 }
 
-//Resolution (meters/pixel) for given zoom level (measured at Equator) 
+-(NSURL *)URLForTile:(RMTile)tile {
+    return [NSURL URLWithString:[self tileURL:tile]];
+}
+
+-(NSString*)tileLatLonBounds:(RMTile)tile {
+    CGPoint min = [self pixelsToMetersAtZoom:tile.x PixelY:(tile.y+1) atResolution:tile.zoom];
+    CGPoint max = [self pixelsToMetersAtZoom:(tile.x+1) PixelY:tile.y atResolution:tile.zoom];
+    
+    CGPoint minDD = [self metersToLatLon:min];
+    CGPoint maxDD = [self metersToLatLon:max];
+        
+    return [NSString stringWithFormat:@"%f,%f,%f,%f",
+            minDD.x, minDD.y, maxDD.x, maxDD.y];
+}
+
+-(CGPoint)metersToLatLon:(CGPoint)point {
+    CGFloat lon = (point.x / originShift) * 180;
+    CGFloat lat = (point.y / originShift) * 180;
+    lat = 180 / M_PI * (2 * atan(exp(lat * M_PI / 180.0)) -  M_PI / 2.0);
+    return CGPointMake(lon, lat);
+}
+
+//Resolution (meters/pixel) for given zoom level (measured at Equator)
 -(float) resolutionAtZoom : (int) zoom 
 { 
     return initialResolution /pow (2,zoom); 
@@ -85,15 +118,33 @@
     meters.x = (px * resolution) - originShift; 
     meters.y = originShift - (py * resolution); 
     return meters; 
-} 
+}
+
+- (NSString *)shortName
+{
+	return @"Custom WMS";
+}
+
+- (NSString *)longDescription
+{
+	return @"Long Description";
+}
+
+- (NSString *)shortAttribution
+{
+	return @"Short Attribution";
+}
+
+- (NSString *)longAttribution
+{
+	return @"Long Attribution";
+}
 
 - (void) dealloc
 {
     [self setName:nil];
     [self setUniqueTilecacheKey:nil];
     [self setWms:nil];
-    
-    [super dealloc];
 }
 
 @end
